@@ -62,6 +62,9 @@ def main():
     ww = Simple_drawing_window1()
     ww.show()
 
+    www = Simple_drawing_window2()
+    www.show()
+
     return app.exec_()
 
 if __name__ == "__main__":
