@@ -53,6 +53,18 @@ class Simple_drawing_window2(Simple_drawing_window):
 
         p.end()
 
+
+class Simple_drawing_window3(Simple_drawing_window):
+    def paintEvent(self, e):
+        p = QPainter()
+        p.begin(self)
+
+        p.setBrush(Qt.blue)
+        p.drawText(10, 10, "Hello World")
+
+        p.end()
+
+
 def main():
     app = QApplication(sys.argv)
 
@@ -64,6 +76,10 @@ def main():
 
     www = Simple_drawing_window2()
     www.show()
+
+    wwww = Simple_drawing_window3()
+    wwww.show()
+
 
     return app.exec_()
 
