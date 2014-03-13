@@ -10,7 +10,44 @@ class Disk ():
         self.color = color
 
     def showdisk (self) :
-        
+        seth(0)
+        fill_color()
+        pencolor("red")
+        fillcolor("red")
+        fd(self.width/2)
+        lt(90)
+        fd(self.height)
+        lt(90)
+        fd(self.width)
+        lt(90)
+        fd(self.height)
+        lt(90)
+        fd(self.width/2)
+        end_fill()
+    def newpos(self,newx,newy):
+        self.pos_x = newx
+        self.pos_y = newy
+        pu()
+        goto(self.pos_x,self.pos_y)
+        pd()
+        seth(0)
+    def cleardisk():
+        seth(0)
+        fill_color()
+        pencolor("white")
+        fillcolor("white")
+        fd(self.width/2)
+        lt(90)
+        fd(self.height)
+        lt(90)
+        fd(self.width)
+        lt(90)
+        fd(self.height)
+        lt(90)
+        fd(self.width/2)
+        end_fill()
+
+
 
 class Hanoi (object):
     def __init__ (self, n = 3, start = "A", workspace = "B", destination = "C"):
