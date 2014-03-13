@@ -31,6 +31,7 @@ class SimplePaintProgram(QWidget):
         label = QLabel("Drag the mouse to draw")
         label.setAlignment(Qt.AlignHCenter)
         clearBt = QPushButton("Clear")
+        clearBt.clicked.connect()
         
         layout.addWidget(paintArea)
         layout.addWidget(label)
