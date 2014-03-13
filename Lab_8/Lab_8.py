@@ -59,6 +59,9 @@ def main():
     w = Simple_drawing_window()
     w.show()
 
+    ww = Simple_drawing_window1()
+    ww.show()
+
     return app.exec_()
 
 if __name__ == "__main__":
