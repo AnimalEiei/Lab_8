@@ -9,15 +9,15 @@ class Disk ():
         self.width = width
         self.color = color
         Turtle.__init__(self, shape="square", visible=False)
-        self.st()
-
+        self.shapesize(self.width, self.height, 2)
+        self.fillcolor(self.color)
     def showdisk (self) :
+        self.st()        
         '''
         pu()
         goto(self.pos_x,self.pos_y)
         pd()
         seth(0)
-
         fill_color()
         pencolor(self.color)
         fillcolor(self.color)
@@ -33,15 +33,14 @@ class Disk ():
         end_fill()
         '''
     def newpos(self,newx,newy):
-        '''
         self.pos_x = newx
         self.pos_y = newy
         pu()
         goto(self.pos_x,self.pos_y)
         pd()
-        seth(0)
-        '''
+       
     def cleardisk(): 
+        self.ht()
         '''
         for i in range(12):
             undo()
@@ -75,33 +74,6 @@ class Hanoi (object):
 
     def solve (self):
         self.move_tower(3, self.startp, self.destinationp, self.workspacep)
-
-class Pole () :
-    def __init__ (self, name, stack, pos_top, pos_x, pos_y, thickness, length, color) :
-        self.name = name
-        self.stack = stack
-        self.pos_top = pos_top
-        self.pos_x = pos_x
-        self.pos_y = pos_y
-        self.thickness = thickness
-        self.length = length
-        self.color = color
-
-    def showpole (self) :
-        seth(0)
-        bk(self.thickness / 2)
-        begin_fill()
-        pencolor(self.color)
-        fillcolor(self.color)
-        for i in range (2) :
-            fd(self.thickness)
-            lt(90)
-            fd(self.length)
-            lt(90)
-        fd(self.thickness / 2)
-        end_fill()
-
-    def pushdisk (disk) :
 
 
 
