@@ -7,4 +7,4 @@ class Disk ():
         self.width = width
         self.color = color
 
-    def showdisk () :
+    def showdisk ():
