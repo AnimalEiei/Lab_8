@@ -35,25 +35,9 @@ class Disk ():
         goto(self.pos_x,self.pos_y)
         pd()
         seth(0)
-    def cleardisk():
-        pu()
-        goto(self.pos_x,self.pos_y)
-        pd()
-        seth(0)
-
-        fill_color()
-        pencolor("white")
-        fillcolor("white")
-        fd(self.width/2)
-        lt(90)
-        fd(self.height)
-        lt(90)
-        fd(self.width)
-        lt(90)
-        fd(self.height)
-        lt(90)
-        fd(self.width/2)
-        end_fill()
+    def cleardisk(): 
+        for i in range(12):
+            undo()
 
 
 
