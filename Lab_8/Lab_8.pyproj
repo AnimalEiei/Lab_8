@@ -22,8 +22,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Lab08_02.py" />
+=======
+    <Compile Include="Hanoi.py" />
+>>>>>>> 1ee7d616712f2396e5b9b6cbe4f108d7a6615614
     <Compile Include="Lab_8.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\rabbit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
