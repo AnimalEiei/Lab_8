@@ -24,6 +24,26 @@ class Simple_drawing_window(QWidget):
         p.drawImage(QRect(200, 100, 320, 320), self.rabbit)
         p.end()
 
+class Simple_drawing_window1(Simple_drawing_window):
+    def paintEvent(self, e):
+        p = QPainter()
+        p.begin(self)
+
+        p.setRenderHint(QPainter.Antialiasing)
+        p.setBrush(Qt.white)
+        p.drawRect(e.rect())
+
+        radx = 100
+        rady = 100
+        p.setPen(Qt.red)
+        
+        center = QPoint(radx,rady)
+        p.setBrush(Qt.yellow)
+        p.drawEllipse(center, radx, rady)
+
+        p.end()
+
+
 def main():
     app = QApplication(sys.argv)
 
