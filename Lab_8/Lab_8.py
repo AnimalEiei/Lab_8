@@ -43,12 +43,27 @@ class Simple_drawing_window1(Simple_drawing_window):
 
         p.end()
 
+class Simple_drawing_window2(Simple_drawing_window):
+    def paintEvent(self, e):
+        p = QPainter()
+        p.begin(self)
+
+        p.setBrush(Qt.blue)
+        p.drawRect(10,10,290,260)
+
+        p.end()
 
 def main():
     app = QApplication(sys.argv)
 
     w = Simple_drawing_window()
     w.show()
+
+    ww = Simple_drawing_window1()
+    ww.show()
+
+    www = Simple_drawing_window2()
+    www.show()
 
     return app.exec_()
 
