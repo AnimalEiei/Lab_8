@@ -51,6 +51,21 @@ class Pole () :
         self.color = color
 
     def showpole (self) :
+        seth(0)
+        bk(self.thickness / 2)
+        begin_fill()
+        fillcolor(self.color)
+        for i in range (2) :
+            fd(self.thickness)
+            lt()
+            fd(self.length)
+            lt()
+        end_fill()
+        fd(self.thickness / 2)
+
+    def pushdisk (disk) :
+
+
 
 
 h = Hanoi()
