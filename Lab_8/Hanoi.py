@@ -10,10 +10,14 @@ class Disk ():
         self.color = color
 
     def showdisk (self) :
+        pu()
+        goto(self.pos_x,self.pos_y)
+        pd()
         seth(0)
+
         fill_color()
-        pencolor("red")
-        fillcolor("red")
+        pencolor(self.color)
+        fillcolor(self.color)
         fd(self.width/2)
         lt(90)
         fd(self.height)
@@ -32,7 +36,11 @@ class Disk ():
         pd()
         seth(0)
     def cleardisk():
+        pu()
+        goto(self.pos_x,self.pos_y)
+        pd()
         seth(0)
+
         fill_color()
         pencolor("white")
         fillcolor("white")
