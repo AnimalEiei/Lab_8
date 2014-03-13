@@ -79,23 +79,24 @@ class Pole () :
         self.length = length
         self.color = color
 
+        self.goto(self.pos_x, self.pos_y)
+        self.shapesize(self.thickness, self.length, 2)
+        self.fillcolor(self.color)
+
+        self.pole = list()
+
     def showpole (self) :
-        seth(0)
-        bk(self.thickness / 2)
-        begin_fill()
-        fillcolor(self.color)
-        for i in range (2) :
-            fd(self.thickness)
-            lt()
-            fd(self.length)
-            lt()
-        end_fill()
-        fd(self.thickness / 2)
+        self.showturtle()
 
-    def pushdisk (disk) :
+    def pushdisk (self, disk) :
+        disk.goto(self.pos_x, disk.pos_y)
+        disk.goto(self.pos_x, self.pos_top)
+        self.pole.append(disk)
 
-
-
+    def popdisk(self):
+        disk = self.pole.pop()
+        disk.goto(disk.x, self.length + 10)
+        return disk
 
 h = Hanoi()
 h.solve()
