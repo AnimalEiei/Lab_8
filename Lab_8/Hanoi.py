@@ -12,8 +12,8 @@ class Disk ():
     def showdisk (self) :
         seth(0)
         fill_color()
-        pencolor("red")
-        fillcolor("red")
+        pencolor(self.color)
+        fillcolor(self.color)
         fd(self.width/2)
         lt(90)
         fd(self.height)
