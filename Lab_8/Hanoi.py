@@ -1,18 +1,23 @@
 from turtle import *
 
-class Disk ():
-    def __init__ (self, name, pos_x, pos_y, height, width, color) :
+class Disk (Turtle):
+    colorList = ["red", "yellow", "blue", "green", "royalblue", "pink", "black"]
+    def __init__ (self, name, pos_x, pos_y, width, height) :
         self.name = name
         self.pos_x = pos_x
         self.pos_y = pos_y
         self.height = height
         self.width = width
-        self.color = color
-        Turtle.__init__(self, shape="square", visible=False)
+        self.color = self.colorList.pop()
+        self.colorList = [self.color] + self.colorList
+        Turtle.__init__(self, shape="square", visible=True)
+        self.speed(1)
         self.shapesize(self.width, self.height, 2)
+        #self.shapesize(20, 20, 2)
         self.fillcolor(self.color)
+        self.pu()
     def showdisk (self) :
-        self.st()        
+        self.showturtle()        
         '''
         pu()
         goto(self.pos_x,self.pos_y)
@@ -58,7 +63,7 @@ class Hanoi (object):
         self.destinationp.showpole()
 
         for i in range (n):
-            self.startp.pushdisk(Disk("d" + str(i), 0, i * 150, 20, (n - i) * 30))
+            self.startp.pushdisk(Disk("d" + str(i), 0, i * 15, 2, (n - i) * 3))
 
     def move_disk (self, start, destination):
         disk = start.popdisk()
@@ -75,34 +80,41 @@ class Hanoi (object):
     def solve (self):
         self.move_tower(3, self.startp, self.destinationp, self.workspacep)
 
-class Pole () :
-    def __init__ (self, name, stack, pos_top, pos_x, pos_y, thickness, length, color) :
+class Pole (Turtle) :
+    colorList = ["red", "yellow", "blue", "green", "royalblue", "pink", "black"]
+    def __init__ (self, name, pos_x, pos_y, thickness = 10, length = 1) :
+        super().__init__(shape="square", visible=True)
+        self.pu()
         self.name = name
-        self.stack = stack
-        self.pos_top = pos_top
+        
         self.pos_x = pos_x
         self.pos_y = pos_y
+        self.pos_top = -pos_y/2
         self.thickness = thickness
         self.length = length
-        self.color = color
+        self.color = Pole.colorList.pop()
+        Pole.colorList = [self.color] + Pole.colorList
 
         self.goto(self.pos_x, self.pos_y)
         self.shapesize(self.thickness, self.length, 2)
         self.fillcolor(self.color)
+        
 
-        self.pole = list()
+        self.stack = list()
 
     def showpole (self) :
         self.showturtle()
 
     def pushdisk (self, disk) :
         disk.goto(self.pos_x, disk.pos_y)
-        disk.goto(self.pos_x, self.pos_top)
-        self.pole.append(disk)
+        disk.goto(self.pos_x, self.pos_top) 
+        self.pos_top += disk.height
+        self.stack.append(disk)
 
     def popdisk(self):
-        disk = self.pole.pop()
-        disk.goto(disk.x, self.length + 10)
+        disk = self.stack.pop()
+        disk.goto(disk.pos_x, self.length + 10)
+        self.pos_top -= disk.height
         return disk
 
 h = Hanoi()
