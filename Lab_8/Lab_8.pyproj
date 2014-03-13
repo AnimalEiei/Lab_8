@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Hanoi.py" />
+    <Compile Include="Lab08_02.py" />
     <Compile Include="Lab_8.py" />
   </ItemGroup>
   <ItemGroup>
