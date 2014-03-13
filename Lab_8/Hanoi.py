@@ -8,13 +8,16 @@ class Disk ():
         self.height = height
         self.width = width
         self.color = color
-
+        Turtle.__init__(self, shape="square", visible=False)
+        self.shapesize(self.width, self.height, 2)
+        self.fillcolor(self.color)
     def showdisk (self) :
+        self.st()        
+        '''
         pu()
         goto(self.pos_x,self.pos_y)
         pd()
         seth(0)
-
         fill_color()
         pencolor(self.color)
         fillcolor(self.color)
@@ -28,16 +31,20 @@ class Disk ():
         lt(90)
         fd(self.width/2)
         end_fill()
+        '''
     def newpos(self,newx,newy):
         self.pos_x = newx
         self.pos_y = newy
         pu()
         goto(self.pos_x,self.pos_y)
         pd()
-        seth(0)
+       
     def cleardisk(): 
+        self.ht()
+        '''
         for i in range(12):
             undo()
+        '''
 
 
 

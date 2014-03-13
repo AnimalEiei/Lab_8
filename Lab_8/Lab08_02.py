@@ -3,8 +3,8 @@ from PySide.QtCore import *
 from PySide.QtGui import *
 
 class PaintWidget(QWidget):
-    WINDOW_WIDTH = 900
-    WINDOW_HEIGHT = 900
+    WINDOW_WIDTH = 300
+    WINDOW_HEIGHT = 300
     def __init__(self, parent = None):
         super().__init__(parent)
         self.setupUI()
@@ -20,8 +20,10 @@ class PaintWidget(QWidget):
         painter = QPainter()
         painter.begin(self)
         painter.setBrush(Qt.red)
+        painter.setPen(Qt.red)
         for i in self.pointList:
-            painter.drawPoint(i)
+            painter.drawEllipse(i, 5, 5)
+            #painter.drawPoint(i)
         painter.end()
         self.update()
 
