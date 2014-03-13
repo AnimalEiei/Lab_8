@@ -25,5 +25,11 @@
     <Compile Include="Hanoi.py" />
     <Compile Include="Lab_8.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\rabbit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
