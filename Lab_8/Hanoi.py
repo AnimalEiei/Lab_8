@@ -1,3 +1,17 @@
+from turtle import *
+
+class Disk ():
+    def __init__ (self, name, pos_x, pos_y, height, width, color) :
+        self.name = name
+        self.pos_x = pos_x
+        self.pos_y = pos_y
+        self.height = height
+        self.width = width
+        self.color = color
+
+    def showdisk (self) :
+        
+
 class Hanoi (object):
     def __init__ (self, n = 3, start = "A", workspace = "B", destination = "C"):
         self.startp = Pole(start, 0, 0)
@@ -24,6 +38,7 @@ class Hanoi (object):
 
     def solve (self):
         self.move_tower(3, self.startp, self.destinationp, self.workspacep)
+
 
 h = Hanoi()
 h.solve()
