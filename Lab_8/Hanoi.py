@@ -99,14 +99,15 @@ class Pole () :
         seth(0)
         bk(self.thickness / 2)
         begin_fill()
+        pencolor(self.color)
         fillcolor(self.color)
         for i in range (2) :
             fd(self.thickness)
-            lt()
+            lt(90)
             fd(self.length)
-            lt()
-        end_fill()
+            lt(90)
         fd(self.thickness / 2)
+        end_fill()
 
     def pushdisk (disk) :
 

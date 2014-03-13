@@ -1,3 +1,4 @@
+'''
 from turtle import *
 
 class Disc(Turtle):
@@ -55,3 +56,33 @@ if __name__=="__main__":
     msg = main()
     print (msg)
     mainloop()
+ '''
+
+def Move(src, dest):
+     dest.append(src.pop())
+
+def Hanoi(nDisks, src, dest, temp):
+    numDiskMoved = 0
+
+    while numDiskMoved < nDisks:                
+            if len(dest) == 0:   #dest is empty, go ahead and move
+                              Move(src, dest)
+                              numDiskMoved += 1
+
+            elif dest[-1] > src[-1]:  #dest disk is bigger than src Disk. Still a valid move
+                                    Move(src, dest)
+                                    numDiskMoved += 1
+
+            else:  #situation where dest disk is smaller than src disk
+                 newNDisks = len(dest) #move all of current dest disks to temp
+                 Hanoi(newNDisks, dest, temp, src)
+                 Move(src, dest)
+                 numDiskMoved += 1
+                 Hanoi(newNDisks, temp, dest, src)
+
+a = [3, 2, 1]
+b = []
+c = []
+
+Hanoi(len(src), a, c, b)
+print(c)
